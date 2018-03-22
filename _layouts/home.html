@@ -34,7 +34,7 @@ layout: default
 
           <article class="post-preview">
             <div class="d-flex flex-column flex-md-row" style="width:100%">
-                <img src="url('{{ post.picture | replace: '//', '/' }}')" style="width:100%">
+                <img src="{{ post.picture | replace: '//', '/' }}" style="width:100%">
                 <div class="col-lg-9">
                     <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
                       <h2 class="post-title">{{ post.title }}</h2>
