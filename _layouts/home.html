@@ -31,19 +31,10 @@ layout: default
 
         <!-- Home Post List -->
         {% for post in site.posts limit : 5 %}
-        
-          <!-- Script for header fallback -->
-          <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-          <script>
-          $('<img/>').attr('src', '{{ post.background | prepend: site.baseurl | replace: '//', '/' }}').on('load', function() {
-             $(this).remove(); // prevent memory leaks
-             $('#background_img_header').css('background-image', "url('{{ post.background | prepend: site.baseurl | replace: '//', '/' }}')");
-          });
-          </script>
 
           <article class="post-preview">
             <div class="d-flex flex-column flex-md-row" style="width:100%">
-                <div id="background_img_header" class="masthead" style="background-image: url('{{ page.background | replace: '//', '/' }}')"></div>
+                <div id="background_img_header" class="masthead" style="background-image: url('{{ post.picture | replace: '//', '/' }}')"></div>
                 <div class="col-lg-9">
                     <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
                       <h2 class="post-title">{{ post.title }}</h2>
