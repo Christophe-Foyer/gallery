@@ -1,0 +1,17 @@
+title:             Christophe Foyer
+email:             christophe@cfoyer.com
+description:       Updates on my projects, activities, and more!
+author:            Christophe Foyer
+baseurl:           "/"
+url:               "http://blog.cfoyer.com"
+
+# Social Profiles
+github_username:   Christophe-Foyer
+
+# Build settings
+markdown:          kramdown
+paginate:          5
+paginate_path:     "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
