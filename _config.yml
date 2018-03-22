@@ -1,9 +1,9 @@
 title:             Christophe Foyer
 email:             christophe@cfoyer.com
-description:       Updates on my projects, activities, and more!
+description:       A gallery of my favorite pictures
 author:            Christophe Foyer
 baseurl:           "/"
-url:               "http://blog.cfoyer.com"
+url:               "http://gallery.cfoyer.com"
 
 # Social Profiles
 github_username:   Christophe-Foyer
