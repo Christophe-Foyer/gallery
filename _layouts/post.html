@@ -54,6 +54,10 @@ $('<img/>').attr('src', '{{ page.background | prepend: site.baseurl | replace: '
         {% endif %}
 
       </div>
+      
+      {% if site.disqus.shortname %}
+        {% include disqus.html %}
+      {% endif %}
 
     </div>
   </div>
