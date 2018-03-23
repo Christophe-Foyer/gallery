@@ -33,20 +33,18 @@ layout: default
         {% for post in site.posts limit : 5 %}
 
           <article class="post-preview">
-            <div class="row">
-                <div class="col-md-5">
-                    <img class="img-fluid rounded mb-3 mb-md-0" src="{{ post.picture }}">
-                </div>
-                <div class="col-md-7">
-                    <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-                      <h2 class="post-title">{{ post.title }}</h2>
-                      {% if post.subtitle %}
-                        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-                      {% else %}
-                        <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 10 }}</h3>
-                      {% endif %}
-                    </a>
-                </div>
+                <img class="img-fluid rounded mb-3 mb-md-0" src="{{ post.picture }}">
+                
+                <br>
+                
+                <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+                  <h2 class="post-title">{{ post.title }}</h2>
+                  {% if post.subtitle %}
+                    <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+                  {% else %}
+                    <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 10 }}</h3>
+                  {% endif %}
+                </a>
             </div>
             <p class="post-meta">Posted by
               {% if post.author %}
