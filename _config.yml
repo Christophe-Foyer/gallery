@@ -6,9 +6,9 @@ baseurl:           "/"
 url:               "http://gallery.cfoyer.com"
 
 # Social Profiles
-github_username:   Christophe-Foyer
-flickr_username:   christophe.foyer
-instagram_username:Christophe_Foyer
+github_username:    Christophe-Foyer
+flickr_username:    christophe.foyer
+instagram_username: Christophe_Foyer
 
 # Build settings
 markdown:          kramdown
