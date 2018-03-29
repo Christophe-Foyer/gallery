@@ -35,9 +35,9 @@ layout: default
           <article class="post-preview">
             <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             {% if post.picture %}
-                <img class="img-fluid rounded mb-3 mb-md-0" src="{{ post.picture }}">
+                <img class="img-fluid rounded mb-1 mb-md-0" src="{{ post.picture }}">
             {% elsif post.background%}
-                <img class="img-fluid rounded mb-3 mb-md-0" src="{{ post.background }}">
+                <img class="img-fluid rounded mb-1 mb-md-0" src="{{ post.background }}">
             {% endif %}
             
               <h2 class="post-title">{{ post.title }}</h2>
