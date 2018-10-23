@@ -146,8 +146,6 @@
 					const zoffset = bbox.min().multiplyScalar(scale).setX(0).setY(0);
 					mesh.position.sub(offset);
 					mesh.position.sub(zoffset);
-					
-					alert(zoffset.getComponent(2));
 
 				} );
 
@@ -162,7 +160,7 @@
 				//
 
 				var controls = new THREE.OrbitControls( camera, renderer.domElement );
-				controls.target.set( 0, 25, 0 );
+				controls.target.set( 0, 20, 0 );
 				controls.update();
 
 				//
@@ -181,7 +179,7 @@
 
 				folder.add( params, 'ASCII' );
 				folder.add( params, 'Binary' );
-				folder.open();
+				//folder.close();
 
 				//
 
