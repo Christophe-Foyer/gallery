@@ -104,7 +104,7 @@
 
 					mesh.position.set( 0, - 0.37, - 0.6 );
 					mesh.rotation.set( - Math.PI / 2, 0, 0 );
-					mesh.scale.set( 2, 2, 2 );
+					mesh.scale.set( 0.001, 0.001, 0.001 );
 
 					mesh.castShadow = true;
 					mesh.receiveShadow = true;
@@ -181,7 +181,7 @@
 				requestAnimationFrame( animate );
 
 				render();
-				stats.update();
+				//stats.update();
 
 			}
 
