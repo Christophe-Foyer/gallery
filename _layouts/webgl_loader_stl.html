@@ -113,30 +113,30 @@
 				var loader = new THREE.STLLoader();
 				var material = new THREE.MeshPhongMaterial( { color: 0xAAAAAA, specular: 0x111111, shininess: 200 } );
 
-				var mesh = "";
+				var mesh;
 				
 				loader.load('three-js/models/stl/' + window.location.hash.substr(1), function ( geometry ) {
 
 					mesh = new THREE.Mesh( geometry, material );
+					
+					mesh.rotation.set( - Math.PI / 2, 0, 0 );
+					mesh.scale.set( 1, 1, 1 );
+
+					// Compute bounds.
+					//const bbox = new THREE.Box3().setFromObject(mesh);
+
+					// Normalize scale.
+					//const scale = span / bbox.getSize().length();
+					//mesh.scale.set(scale, scale, scale);
+
+					// Recenter.
+					//const offset = bbox.getCenter().multiplyScalar(scale);
+					//mesh.position.sub(offset);
+					
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
 
 				} );
-					
-				mesh.rotation.set( - Math.PI / 2, 0, 0 );
-				mesh.scale.set( 1, 1, 1 );
-
-				// Compute bounds.
-				//const bbox = new THREE.Box3().setFromObject(mesh);
-
-				// Normalize scale.
-				//const scale = span / bbox.getSize().length();
-				//mesh.scale.set(scale, scale, scale);
-
-				// Recenter.
-				//const offset = bbox.getCenter().multiplyScalar(scale);
-				//mesh.position.sub(offset);
-				
-				mesh.castShadow = true;
-				mesh.receiveShadow = true;
 
 				scene.add( mesh );
 
