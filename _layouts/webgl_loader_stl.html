@@ -128,21 +128,21 @@
 					
 					mesh.rotation.set( - Math.PI / 2, 0, 0 );
 					mesh.scale.set( 1, 1, 1 );
-
-					// Compute bounds.
-					//const bbox = new THREE.Box3().setFromObject(mesh);
-
-					// Normalize scale.
-					//const scale = span / bbox.getSize().length();
-					//mesh.scale.set(scale, scale, scale);
-
-					// Recenter.
-					//const offset = bbox.getCenter().multiplyScalar(scale);
-					//mesh.position.sub(offset);
 					
 					mesh.castShadow = true;
 					mesh.receiveShadow = true;
 					scene.add( mesh );
+					
+					// Compute bounds.
+					const bbox = new THREE.Box3().setFromObject(mesh);
+
+					// Normalize scale.
+					const scale = 1 / bbox.getSize().length();
+					mesh.scale.set(scale, scale, scale);
+
+					// Recenter.
+					const offset = bbox.getCenter().multiplyScalar(scale);
+					mesh.position.sub(offset);
 
 				} );
 
