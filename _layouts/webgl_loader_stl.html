@@ -196,14 +196,14 @@
 			function exportASCII() {
 
 				var result = exporter.parse( mesh );
-				saveString( result, 'box.stl' );
+				saveString( result, 'part.stl' );
 
 			}
 
 			function exportBinary() {
 
 				var result = exporter.parse( mesh, { binary: true } );
-				saveArrayBuffer( result, 'box.stl' );
+				saveArrayBuffer( result, 'part.stl' );
 
 			}
 
