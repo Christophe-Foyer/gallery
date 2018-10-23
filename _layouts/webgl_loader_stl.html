@@ -138,7 +138,7 @@
 					const bbox = new THREE.Box3().setFromObject(mesh);
 
 					// Normalize scale.
-					const scale = 1 / bbox.getSize().length();
+					const scale = 1000 / bbox.getSize().length();
 					mesh.scale.set(scale, scale, scale);
 
 					// Recenter.
