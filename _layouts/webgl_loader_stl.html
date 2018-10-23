@@ -144,8 +144,7 @@
 					// Recenter.
 					const offset = bbox.getCenter().multiplyScalar(scale);
 					mesh.position.sub(offset);
-					
-					alert(offset)
+					scene.position.set( 0, 0, bbox.getSize().length()/2 );
 
 				} );
 
