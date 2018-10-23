@@ -113,9 +113,11 @@
 				var loader = new THREE.STLLoader();
 				var material = new THREE.MeshPhongMaterial( { color: 0xAAAAAA, specular: 0x111111, shininess: 200 } );
 
+				var mesh = "";
+				
 				loader.load('three-js/models/stl/' + window.location.hash.substr(1), function ( geometry ) {
 
-					var mesh = new THREE.Mesh( geometry, material );
+					mesh = new THREE.Mesh( geometry, material );
 
 				} );
 					
