@@ -138,13 +138,14 @@
 					const bbox = new THREE.Box3().setFromObject(mesh);
 
 					// Normalize scale.
-					const scale = 1000 / bbox.getSize().length();
+					const scale = 100 / bbox.getSize().length();
 					mesh.scale.set(scale, scale, scale);
 
 					// Recenter.
 					const offset = bbox.getCenter().multiplyScalar(scale);
+					const zoffset = bbox.min().multiplyScalar(scale).setX(0).setY(0)
 					mesh.position.sub(offset);
-					scene.position.set( 0, 0, bbox.getSize().length()/2 );
+					mesh.position.sub(zoffset);
 
 				} );
 
