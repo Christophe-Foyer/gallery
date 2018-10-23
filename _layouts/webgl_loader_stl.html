@@ -143,7 +143,9 @@
 
 					// Recenter.
 					const offset = bbox.getCenter(bbox).multiplyScalar(scale);
-					const zoffset = bbox.min().multiplyScalar(scale).setX(0).setY(0);
+					const zoffset = bbox.min().multiplyScalar(scale);
+					zoffset = zoffset.setX(0);
+					zoffset = zoffset.setY(0);
 					mesh.position.sub(offset);
 					mesh.position.sub(zoffset);
 
@@ -160,7 +162,7 @@
 				//
 
 				var controls = new THREE.OrbitControls( camera, renderer.domElement );
-				controls.target.set( 0, 20, 0 );
+				controls.target.set( 0, 25, 0 );
 				controls.update();
 
 				//
