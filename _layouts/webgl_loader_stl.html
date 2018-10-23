@@ -38,11 +38,18 @@
 	</head>
 	<body>
 		<div id="info">
-			<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> -
-			STL loader test by <a href="https://github.com/aleeper" target="_blank" rel="noopener">aleeper</a>.
-			URL: {{ page.url|remove:'index.html' }}
+			<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - <a id="file" onload="fileName()"></a>
 		</div>
 
+		<script>
+		function fileName() {
+			var str = window.location.hash.substr(1);
+			var res = str.split("/");
+			document.getElementById("file").innerHTML = res[res.length-1];
+			document.getElementById("file").href = 'three-js/models/' + str
+		}
+		</script>
+		
 		<script src="three-js/build/three.js"></script>
 
 		<script src="three-js/js/loaders/STLLoader.js"></script>
@@ -115,7 +122,7 @@
 				var loader = new THREE.STLLoader();
 				var material = new THREE.MeshPhongMaterial( { color: 0xAAAAAA, specular: 0x111111, shininess: 200 } );
 				
-				loader.load('three-js/models/stl/' + window.location.hash.substr(1), function ( geometry ) {
+				loader.load('three-js/models/' + window.location.hash.substr(1), function ( geometry ) {
 
 					mesh = new THREE.Mesh( geometry, material );
 					
